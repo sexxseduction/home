@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área VIP Anônima - Acesso Confidencial</title>
+    <meta name="description" content="Acesso exclusivo e discreto. O que acontece no sigilo, fica no sigilo.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #0D0D0F;
+            --bg-sec: #16161A;
+            --primary: #9D00FF;
+            --primary-hover: #B026FF;
+            --accent: #00F0FF;
+            --text-main: #FFFFFF;
+            --text-sec: #B5B5B5;
+            --text-muted: #6E6E73;
+            --glow: 0 0 20px rgba(157, 0, 255, 0.4);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        p {
+            color: var(--text-sec);
+            margin-bottom: 1.5rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Utilities */
+        .text-center {
+            text-align: center;
+        }
+
+        .text-primary {
+            color: var(--primary);
+        }
+
+        .text-accent {
+            color: var(--accent);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .mb-1 {
+            margin-bottom: 1rem;
+        }
+
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 4rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 8px;
+            transition: var(--transition);
+            box-shadow: var(--glow);
+            border: 1px solid transparent;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(157, 0, 255, 0.6);
+        }
+
+        .btn-large {
+            font-size: 1.3rem;
+            padding: 1.2rem 3rem;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem 0;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at center, rgba(157, 0, 255, 0.1) 0%, rgba(13, 13, 15, 1) 70%);
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff, #b5b5b5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero .subheadline {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .badge {
+            background-color: rgba(157, 0, 255, 0.15);
+            color: var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Problem Section */
+        .problem {
+            background-color: var(--bg-sec);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .problem-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .problem-card h3 {
+            color: #fff;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* Steps */
+        .steps {
+            background-color: var(--bg-main);
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            background: var(--bg-sec);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .step-number {
+            font-size: 2rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.1);
+            margin-right: 1.5rem;
+            line-height: 1;
+        }
+
+        /* Benefits (Bullets) */
+        .benefits-list {
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .benefits-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .benefits-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--bg-sec);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--bg-main);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+
+        .avatar-placeholder {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        /* Pricing */
+        .pricing {
+            background: radial-gradient(circle at top, rgba(157, 0, 255, 0.05) 0%, rgba(13, 13, 15, 1) 60%);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--bg-sec);
+            border-radius: 16px;
+            padding: 2.5rem;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 20px rgba(157, 0, 255, 0.15);
+            transform: scale(1.05);
+            z-index: 2;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: #fff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 900;
+            margin: 1.5rem 0 0.5rem;
+            color: #fff;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: var(--text-sec);
+            font-weight: 400;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+            flex-grow: 1;
+        }
+
+        .pricing-features li {
+            margin-bottom: 0.8rem;
+            color: var(--text-sec);
+            display: flex;
+            align-items: center;
+        }
+
+        .pricing-features li.bonus {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .pricing-features li i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: var(--bg-sec);
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #fff;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 1.5rem;
+            color: var(--text-sec);
+        }
+
+        .faq-answer p {
+            padding-bottom: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            padding: 3rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        footer a {
+            color: var(--text-muted);
+            margin: 0 10px;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        /* Countdown */
+        .countdown-bar {
+            background: linear-gradient(90deg, #9D00FF, #00F0FF);
+            color: #fff;
+            text-align: center;
+            padding: 0.8rem;
+            font-weight: 700;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+                border: 2px solid var(--primary);
+            }
+
+            .countdown-bar {
+                font-size: 0.9rem;
+                padding: 0.6rem;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="badge">🔒 Acesso Confidencial & Imediato</div>
+            <h1>O Que Acontece No Sigilo,<br>Fica No Sigilo.</h1>
+            <p class="subheadline">Descubra agora a Área VIP que ninguém quer que você encontre. Sem rastros. Sem
+                assinaturas. Acesso vitalício.</p>
+
+            <img src="https://i.ibb.co/7tp6Sb8Q/vipa.png" alt="Área VIP"
+                style="max-width:420px;width:90%;display:block;margin:20px auto;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.2);">
+
+            <a href="#offer" class="btn btn-large">Entrar Agora por R$1,99</a>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <h2 class="text-center mb-4">Você também odeia isso?</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>❌ O vídeo corta na melhor parte</h3>
+                    <p>Sites comuns te obrigam a pagar caro justo na hora que interessa. Aqui você tem acesso sem
+                        cortes.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>❌ O medo de ser descoberto</h3>
+                    <p>Cadastros que pedem e-mail, telefone e deixam rastro na fatura. Nós eliminamos isso.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>❌ A busca impossível</h3>
+                    <p>Sabe aquela modelo que você viu um trecho e nunca mais achou? Nós organizamos tudo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformation -->
+    <section class="transformation text-center">
+        <div class="container">
+            <h2 class="mb-2">Pare de procurar. Comece a aproveitar.</h2>
+            <p style="max-width: 600px; margin: 0 auto 2rem;">Imagine ter uma área exclusiva, onde você entra, consome o
+                melhor conteúdo premium e sai sem deixar vestígios. Isso não é apenas sobre vídeos, é sobre liberdade e
+                controle.</p>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="steps">
+        <div class="container">
+            <h2 class="text-center mb-4">Como funciona o Acesso VIP?</h2>
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div>
+                        <h3>Pagamento Seguro</h3>
+                        <p>Valor simbólico de R$1,99 para filtrar curiosos. Nada aparece na sua fatura com nome
+                            explícito.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h3>Acesso Imediato</h3>
+                        <p>Assim que confirmado, você recebe seu link único de acesso.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div>
+                        <h3>Navegação Anônima</h3>
+                        <p>Não exigimos cadastro complexo. Seu anonimato é nossa prioridade.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div>
+                        <h3>Conteúdo Premium</h3>
+                        <p>Atualizações constantes e as melhores seleções da internet em um só lugar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="problem">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2>Por que a Área VIP Anônima?</h2>
+                <p>Feito para quem exige discrição.</p>
+            </div>
+            <ul class="benefits-list">
+                <li>Zero assinaturas mensais (Pagamento Único)</li>
+                <li>Sem cadastro de dados pessoais sensíveis</li>
+                <li>Acesso instantâneo 24/7</li>
+                <li>Ambiente 100% livre de anúncios intrusivos</li>
+                <li>Curadoria de conteúdo de alta qualidade</li>
+            </ul>
+
+            <img src="https://i.ibb.co/MxmkHqjn/vip.gif" alt="Conteúdo VIP"
+                style="max-width:420px;width:90%;display:block;margin:30px auto;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.25);">
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="text-center mb-4">Quem entrou, garante.</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"Achei que era golpe por ser barato, mas o conteúdo é absurdo. O melhor de tudo é não ter
+                        cobrança mensal."</p>
+                    <div class="testimonial-author">
+                        <div class="avatar-placeholder">R</div>
+                        <div>
+                            <strong>Ricardo M.</strong><br>
+                            <span style="font-size: 0.8rem; color: var(--text-muted);">Membro há 2 semanas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Finalmente um lugar organizado. A parte dos bônus com a lista de perfis vale muito mais que
+                        R$7,00."</p>
+                    <div class="testimonial-author">
+                        <div class="avatar-placeholder">A</div>
+                        <div>
+                            <strong>André S.</strong><br>
+                            <span style="font-size: 0.8rem; color: var(--text-muted);">Membro há 5 dias</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Discreto de verdade. Na fatura veio um nome genérico, ninguém desconfiou. Recomendo."</p>
+                    <div class="testimonial-author">
+                        <div class="avatar-placeholder">F</div>
+                        <div>
+                            <strong>Felipe C.</strong><br>
+                            <span style="font-size: 0.8rem; color: var(--text-muted);">Membro há 1 mês</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offer Section -->
+    <section id="offer" class="pricing">
+        <div class="container">
+            <h2 class="text-center mb-4">Escolha Seu Acesso</h2>
+            <div class="pricing-grid">
+                <!-- Basic Card -->
+                <div class="pricing-card">
+                    <h3>Área VIP - Básico</h3>
+                    <div class="price">R$ 1,99<span>/único</span></div>
+                    <p>Entrada rápida e discreta.</p>
+                    <ul class="pricing-features">
+                        <li><i>✓</i> Acesso à Área Privada</li>
+                        <li><i>✓</i> Sem mensalidades</li>
+                        <li><i>✓</i> Bônus: Guia de Navegação</li>
+                    </ul>
+                    <a href="#" class="btn"
+                        style="background-color: transparent; border: 1px solid var(--primary);">Quero Acesso Básico</a>
+                </div>
+
+                <!-- Premium Card -->
+                <div class="pricing-card featured">
+                    <div class="popular-badge">MAIS POPULAR</div>
+                    <h3 class="text-primary">VIP Completo Confidencial</h3>
+                    <div class="price" style="color: var(--primary);">R$ 7,99<span>/único</span></div>
+                    <p>A experiência definitiva sem limites.</p>
+                    <ul class="pricing-features">
+                        <li><i>✓</i> Tudo do plano Básico</li>
+                        <li class="bonus"><i>★</i> Bônus 1: Lista Secreta de Perfis</li>
+                        <li class="bonus"><i>★</i> Bônus 2: Atualizações por 30 dias</li>
+                        <li class="bonus"><i>★</i> Bônus 3: Categorias Raras</li>
+                    </ul>
+                    <a href="#" class="btn btn-large">Quero Acesso Completo</a>
+                </div>
+            </div>
+
+            <!-- Guarantee -->
+            <div class="text-center mt-5" style="margin-top: 3rem;">
+                <!-- SVG Icon for Guarantee -->
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    style="margin-bottom: 1rem; opacity: 0.8;">
+                    <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" fill="#9D00FF" stroke="#00F0FF"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M9 12L11 14L15 10" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <h4>Garantia Blindada de 7 Dias</h4>
+                <p style="font-size: 0.9rem; max-width: 500px; margin: 0 auto;">Se você não gostar do conteúdo ou achar
+                    que não valeu a pena, devolvemos seu dinheiro sem perguntas.</p>
+            </div>
+
+            <!-- Final CTA & Image -->
+            <div class="text-center" style="margin-top: 3rem;">
+                <img src="https://i.ibb.co/bgT7Ymp2/mul.gif" alt="Acesso VIP"
+                    style="max-width:420px;width:90%;display:block;margin:30px auto;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.25);">
+
+                <a href="#offer" class="btn btn-large"
+                    style="display: block; width: 100%; max-width: 400px; margin: 20px auto 0; box-shadow: 0 0 40px rgba(157, 0, 255, 0.5);">QUERO
+                    ACESSO IMEDIATO</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="text-center mb-4">Perguntas Frequentes</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">O pagamento é seguro? Seus dados ficam salvos? <span>+</span></div>
+                <div class="faq-answer">
+                    <p>Sim, utilizamos processadores de pagamento criptografados. Nós NÃO temos acesso aos dados do seu
+                        cartão. Tudo é processado externamente e de forma anônima.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">O que aparece na fatura do cartão? <span>+</span></div>
+                <div class="faq-answer">
+                    <p>Apenas um nome genérico da plataforma de pagamento (ex: "PGTO DIGITAIS" ou similar), sem qualquer
+                        menção ao conteúdo adulto ou nome do site.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Como recebo o acesso? <span>+</span></div>
+                <div class="faq-answer">
+                    <p>Imediatamente após a confirmação do pagamento, você será redirecionado para a área de membros e
+                        também receberá o link por e-mail (caso opte por informar).</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Preciso pagar mensalidade? <span>+</span></div>
+                <div class="faq-answer">
+                    <p>Não! O pagamento é único. Você paga uma vez e tem acesso conforme o plano escolhido, sem
+                        surpresas no fim do mês.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Posso cancelar se não gostar? <span>+</span></div>
+                <div class="faq-answer">
+                    <p>Sim. Você tem 7 dias de garantia incondicional. Se não for o que esperava, devolvemos 100% do seu
+                        dinheiro.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">É vírus? Preciso instalar algo? <span>+</span></div>
+                <div class="faq-answer">
+                    <p>Não. É uma área de membros online, acessível pelo navegador do seu celular ou computardor. Não
+                        precisa baixar nenhum aplicativo suspeito.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Área VIP Anônima. Todos os direitos reservados.</p>
+            <div style="margin-top: 1rem;">
+                <a href="#">Termos de Uso</a> |
+                <a href="#">Política de Privacidade</a> |
+                <a href="#">Contato</a>
+            </div>
+            <p style="font-size: 0.7rem; color: #444; margin-top: 2rem;">Este site não tem afiliação com Facebook,
+                Google ou qualquer plataforma de mídia social.</p>
+        </div>
+    </footer>
+
+    <!-- Countdown Bar -->
+    <div class="countdown-bar" id="countdownBanner">
+        <span>⚠️ OFERTA RELÂMPAGO:</span> O preço promocional expira em <span id="timer">14:59</span>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                const toggle = item.querySelector('span');
+
+                // Close others
+                document.querySelectorAll('.faq-answer').forEach(a => {
+                    if (a !== answer) {
+                        a.style.maxHeight = null;
+                        a.previousElementSibling.querySelector('span').textContent = '+';
+                    }
+                });
+
+                if (answer.style.maxHeight) {
+                    answer.style.maxHeight = null;
+                    toggle.textContent = '+';
+                } else {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                    toggle.textContent = '-';
+                }
+            });
+        });
+
+        // Countdown Timer
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration; // Reset or stop
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            // Random time between 10 and 15 minutes in seconds
+            var randomTime = Math.floor(Math.random() * (900 - 600 + 1) + 600);
+            var display = document.querySelector('#timer');
+            startTimer(randomTime, display);
+        };
+
+        // Smooth Scroll for Anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
