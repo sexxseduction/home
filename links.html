@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal VIP - Acesso Exclusivo</title>
+    <meta name="description" content="A Elite do Prazer: Seleção Exclusiva dos Melhores Sites.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #0D0D0F;
+            --bg-sec: #16161A;
+            --primary: #9D00FF;
+            --primary-hover: #B026FF;
+            --accent: #00F0FF;
+            --text-main: #FFFFFF;
+            --text-sec: #B5B5B5;
+            --text-muted: #6E6E73;
+            --glow: 0 0 20px rgba(157, 0, 255, 0.4);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 4rem 0 2rem;
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(157, 0, 255, 0.15) 0%, rgba(13, 13, 15, 1) 70%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #fff, #b5b5b5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-sec);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .logo-badge {
+            background: rgba(157, 0, 255, 0.1);
+            color: var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Grid */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 3rem 0 5rem;
+        }
+
+        .link-card {
+            background: var(--bg-sec);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(157, 0, 255, 0.2);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 180px;
+            background-color: #222;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .link-card:hover .card-image img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-card {
+            display: block;
+            background: rgba(157, 0, 255, 0.1);
+            color: var(--primary);
+            text-align: center;
+            padding: 0.8rem;
+            border-radius: 6px;
+            font-weight: 600;
+            border: 1px solid var(--primary);
+            transition: var(--transition);
+        }
+
+        .link-card:hover .btn-card {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 0 15px rgba(157, 0, 255, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2rem 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .links-grid {
+                grid-template-columns: 1fr;
+                padding: 2rem 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+        <div class="container">
+            <div class="logo-badge">Portal VIP</div>
+            <h1>A Elite do Prazer</h1>
+            <p>Seleção Exclusiva dos Melhores Sites</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="links-grid">
+
+            <!-- Chaturbate -->
+            <div class="link-card">
+                <div class="card-image">
+                    <img src="https://placehold.co/600x400/16161A/9D00FF/png?text=Chaturbate" alt="Chaturbate">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Chaturbate</h3>
+                        <p class="card-desc">Câmeras ao vivo com milhares de modelos.</p>
+                    </div>
+                    <a href="https://chaturbate.com/hecola" target="_blank" class="btn-card">ACESSAR AGORA</a>
+                </div>
+            </div>
+
+            <!-- Stripchat -->
+            <div class="link-card">
+                <div class="card-image">
+                    <img src="https://placehold.co/600x400/16161A/9D00FF/png?text=Stripchat" alt="Stripchat">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Stripchat</h3>
+                        <p class="card-desc">Interação ao vivo e shows exclusivos.</p>
+                    </div>
+                    <a href="https://pt.stripchat.com/" target="_blank" class="btn-card">ACESSAR AGORA</a>
+                </div>
+            </div>
+
+            <!-- AssoAss -->
+            <div class="link-card">
+                <div class="card-image">
+                    <img src="https://placehold.co/600x400/16161A/9D00FF/png?text=AssoAss" alt="AssoAss">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">AssoAss</h3>
+                        <p class="card-desc">Conteúdo premium selecionado.</p>
+                    </div>
+                    <a href="https://www.assoass.com/pt" target="_blank" class="btn-card">ACESSAR AGORA</a>
+                </div>
+            </div>
+
+            <!-- xHamster -->
+            <div class="link-card">
+                <div class="card-image">
+                    <img src="https://placehold.co/600x400/16161A/9D00FF/png?text=xHamster" alt="xHamster">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">xHamster</h3>
+                        <p class="card-desc">Imensa variedade de vídeos amadores e profissionais.</p>
+                    </div>
+                    <a href="https://pt.xhamster.com/" target="_blank" class="btn-card">ACESSAR AGORA</a>
+                </div>
+            </div>
+
+            <!-- Aunt Judys -->
+            <div class="link-card">
+                <div class="card-image">
+                    <img src="https://placehold.co/600x400/16161A/9D00FF/png?text=Aunt+Judys" alt="Aunt Judys">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Aunt Judy's</h3>
+                        <p class="card-desc">O clássico das mulheres maduras.</p>
+                    </div>
+                    <a href="https://auntjudys.com" target="_blank" class="btn-card">ACESSAR AGORA</a>
+                </div>
+            </div>
+
+            <!-- Pornhub -->
+            <div class="link-card">
+                <div class="card-image">
+                    <img src="https://placehold.co/600x400/16161A/9D00FF/png?text=Pornhub" alt="Pornhub">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Pornhub</h3>
+                        <p class="card-desc">O maior site de vídeos do mundo.</p>
+                    </div>
+                    <a href="https://pt.pornhub.com/" target="_blank" class="btn-card">ACESSAR AGORA</a>
+                </div>
+            </div>
+
+            <!-- Brazzers -->
+            <div class="link-card">
+                <div class="card-image">
+                    <img src="https://placehold.co/600x400/16161A/9D00FF/png?text=Brazzers" alt="Brazzers">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Brazzers Network</h3>
+                        <p class="card-desc">Produções de alta qualidade e estrelas famosas.</p>
+                    </div>
+                    <a href="https://tgp1.brazzersnetwork.com/" target="_blank" class="btn-card">ACESSAR AGORA</a>
+                </div>
+            </div>
+
+            <!-- XVideos -->
+            <div class="link-card">
+                <div class="card-image">
+                    <img src="https://placehold.co/600x400/16161A/9D00FF/png?text=XVideos" alt="XVideos">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">XVideos</h3>
+                        <p class="card-desc">A maior comunidade de vídeos do Brasil.</p>
+                    </div>
+                    <a href="https://www.xvideos.com/" target="_blank" class="btn-card">ACESSAR AGORA</a>
+                </div>
+            </div>
+
+            <!-- Fatal Model -->
+            <div class="link-card">
+                <div class="card-image">
+                    <img src="https://placehold.co/600x400/16161A/9D00FF/png?text=Fatal+Model" alt="Fatal Model">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Fatal Model</h3>
+                        <p class="card-desc">Acompanhantes verificadas e seguras.</p>
+                    </div>
+                    <a href="https://fatalmodel.com/" target="_blank" class="btn-card">ACESSAR AGORA</a>
+                </div>
+            </div>
+
+            <!-- Romance Perfeito -->
+            <div class="link-card">
+                <div class="card-image">
+                    <img src="https://placehold.co/600x400/16161A/9D00FF/png?text=Romance" alt="Romance Perfeito">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Romance Perfeito</h3>
+                        <p class="card-desc">Encontros casuais e discretos.</p>
+                    </div>
+                    <a href="https://www.romanceperfeito.com.br/lp/2/1/1" target="_blank" class="btn-card">ACESSAR
+                        AGORA</a>
+                </div>
+            </div>
+
+            <!-- Jerk Roulette -->
+            <div class="link-card">
+                <div class="card-image">
+                    <img src="https://placehold.co/600x400/16161A/9D00FF/png?text=Jerk+Roulette" alt="Jerk Roulette">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Jerk Roulette</h3>
+                        <p class="card-desc">Roleta aleatória de diversão.</p>
+                    </div>
+                    <a href="https://info-jerkroulette.com/" target="_blank" class="btn-card">ACESSAR AGORA</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Portal VIP. Todos os direitos reservados.</p>
+            <p>Acesso restrito para maiores de 18 anos.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
