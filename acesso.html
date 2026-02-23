@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso VIP - Bem-vindo</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #0D0D0F;
+            --bg-sec: #16161A;
+            --primary: #9D00FF;
+            --primary-hover: #B026FF;
+            --accent: #00F0FF;
+            --text-main: #FFFFFF;
+            --text-sec: #B5B5B5;
+            --text-muted: #6E6E73;
+            --glow: 0 0 30px rgba(157, 0, 255, 0.5);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px;
+            padding: 2rem 1rem;
+        }
+
+        /* Cover Image */
+        .cover {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(157, 0, 255, 0.2);
+            margin-bottom: 2.5rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Profile Section */
+        .profile-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-pic {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            padding: 3px;
+            background: var(--bg-main);
+            object-fit: cover;
+            box-shadow: var(--glow);
+        }
+
+        .verified-badge {
+            position: absolute;
+            bottom: 5px;
+            right: 0;
+            background: var(--accent);
+            color: #000;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            border: 2px solid var(--bg-main);
+        }
+
+        .profile-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+            color: #fff;
+        }
+
+        .profile-status {
+            font-size: 0.8rem;
+            color: var(--accent);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        /* Content */
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, var(--text-sec));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            line-height: 1.1;
+        }
+
+        .hot-copy {
+            font-size: 1.15rem;
+            color: var(--text-sec);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+        }
+
+        .hot-copy span {
+            color: #fff;
+            font-weight: 700;
+            display: block;
+            margin-top: 1rem;
+        }
+
+        /* CTA Button */
+        .cta-btn {
+            display: block;
+            background: var(--primary);
+            color: #fff;
+            padding: 1.2rem 2rem;
+            border-radius: 12px;
+            font-size: 1.3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: var(--glow);
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            margin-bottom: 2rem;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+            background: var(--primary-hover);
+            box-shadow: 0 0 50px rgba(157, 0, 255, 0.7);
+        }
+
+        /* Footer Info */
+        .secure-info {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .secure-info svg {
+            fill: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8rem; }
+            .hot-copy { font-size: 1rem; }
+            .cta-btn { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Cover Image -->
+        <img src="https://i.ibb.co/xqJ3DVhG/acapa.png" alt="Acesso Exclusivo" class="cover">
+
+        <!-- Profile Section -->
+        <div class="profile-container">
+            <img src="https://i.ibb.co/Pz3Vbs7b/m-IA.png" alt="Minha Foto" class="profile-pic">
+            <div class="verified-badge">✓</div>
+        </div>
+        <div class="profile-name">Área VIP Anônima</div>
+        <div class="profile-status">Dona Oficial • Online Agora</div>
+
+        <!-- Copy -->
+        <h1>Bem-vindo!<br>Agora é hora de aproveitar...</h1>
+        
+        <p class="hot-copy">
+            Você está a um passo de entrar no lugar onde o sigilo é a única regra. Preparei conteúdos que você não vai encontrar em nenhum outro lugar da internet.
+            <span>A intensidade que você busca está no nosso Grupo VIP.</span>
+        </p>
+
+        <!-- CTA Button -->
+        <a href="https://t.me/seu_link_do_grupo" class="cta-btn">ENTRAR NO GRUPO VIP AGORA 🔥</a>
+
+        <!-- Security Footer -->
+        <div class="secure-info">
+            <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            Conexão 100% segura e anônima.
+        </div>
+
+    </div>
+
+</body>
+</html>
