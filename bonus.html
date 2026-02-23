@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentes VIP - Bônus Exclusivo</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #0D0D0F;
+            --bg-sec: #16161A;
+            --primary: #9D00FF;
+            --primary-hover: #B026FF;
+            --accent: #00F0FF;
+            --text-main: #FFFFFF;
+            --text-sec: #B5B5B5;
+            --text-muted: #6E6E73;
+            --glow: 0 0 30px rgba(157, 0, 255, 0.5);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://i.ibb.co/xqJ3DVhG/acapa.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 600px;
+            padding: 3rem 1rem;
+            background: rgba(13, 13, 15, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 2rem auto;
+        }
+
+        /* Original Size Image */
+        .main-photo {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 15px;
+            box-shadow: var(--glow);
+            margin-bottom: 2rem;
+            border: 2px solid var(--primary);
+        }
+
+        /* Content */
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            line-height: 1.1;
+        }
+
+        .hot-copy {
+            font-size: 1.2rem;
+            color: var(--text-sec);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            padding: 0 1rem;
+        }
+
+        .hot-copy span {
+            color: #fff;
+            font-weight: 700;
+            display: block;
+            margin-top: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* CTA Button */
+        .cta-btn {
+            display: block;
+            background: var(--primary);
+            color: #fff;
+            padding: 1.2rem 2rem;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: var(--glow);
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 0 auto 1.5rem;
+            max-width: 400px;
+        }
+
+        .cta-btn.secondary {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05) translateY(-5px);
+            background: var(--primary-hover);
+            box-shadow: 0 0 60px rgba(157, 0, 255, 0.8);
+        }
+
+        .cta-btn.secondary:hover {
+            background: var(--accent);
+            color: #000;
+            box-shadow: 0 0 40px rgba(0, 240, 255, 0.6);
+        }
+
+        /* Footer Info */
+        .secure-info {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .hot-copy {
+                font-size: 1rem;
+            }
+
+            .cta-btn {
+                font-size: 1.1rem;
+                padding: 1rem 1.5rem;
+            }
+
+            .container {
+                padding: 1.5rem 1rem;
+                margin: 1.5rem auto;
+                background: rgba(13, 13, 15, 0.7);
+            }
+
+            .main-photo {
+                max-width: 280px;
+                margin-bottom: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Brand Logo -->
+        <img src="https://i.ibb.co/gbWqvX91/sem-fundo-2.png" alt="Marca" style="max-width: 180px; margin-bottom: 2rem;">
+
+        <!-- Main Photo Original Size -->
+        <img src="https://i.ibb.co/Pz3Vbs7b/m-IA.png" alt="Dona da Área VIP" class="main-photo">
+
+        <!-- Copy -->
+        <h1>Presentes VIP!<br>Sua jornada começa aqui...</h1>
+
+        <p class="hot-copy">
+            Além do acesso ao nosso círculo mais íntimo, preparei um guia mestre para você dominar a arte da conquista e
+            não deixar nenhuma chance escapar.
+            <span>Aproveite seus bônus exclusivos agora:</span>
+        </p>
+
+        <!-- CTA Buttons -->
+        <a href="https://t.me/seu_link_do_grupo" class="cta-btn">ENTRAR NO GRUPO VIP AGORA 🔥</a>
+
+        <a href="#" class="cta-btn secondary">BAIXAR EBOOK SEDUÇÃO TOTAL 📚</a>
+
+        <!-- Security Footer -->
+        <div class="secure-info">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+            </svg>
+            Conteúdo Protegido e Exclusivo.
+        </div>
+
+    </div>
+
+</body>
+
+</html>
