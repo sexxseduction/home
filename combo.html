@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combo PowerSeduction - Acesso Exclusivo</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #0D0D0F;
+            --bg-sec: #16161A;
+            --primary: #9D00FF;
+            --primary-hover: #B026FF;
+            --accent: #00F0FF;
+            --text-main: #FFFFFF;
+            --text-sec: #B5B5B5;
+            --text-muted: #6E6E73;
+            --glow: 0 0 30px rgba(157, 0, 255, 0.4);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://i.ibb.co/xqJ3DVhG/acapa.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-main);
+            line-height: 1.8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 750px;
+            padding: 3rem 2rem;
+            background: rgba(13, 13, 15, 0.75);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 3rem auto;
+            text-align: left;
+        }
+
+        .header-logo {
+            display: block;
+            max-width: 140px;
+            margin: 0 auto 2.5rem;
+        }
+
+        /* Advertorial Styling */
+        .advertorial-badge {
+            display: inline-block;
+            background: rgba(157, 0, 255, 0.1);
+            color: var(--accent);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            color: var(--text-sec);
+            margin-bottom: 2rem;
+            border-left: 3px solid var(--primary);
+            padding-left: 1.5rem;
+            font-style: italic;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-sec);
+            font-size: 1.1rem;
+        }
+
+        .highlight {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        /* Product Cards */
+        .product-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            border: 1px solid rgba(157, 0, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .product-section:hover {
+            border-color: var(--primary);
+            background: rgba(157, 0, 255, 0.05);
+        }
+
+        .product-title {
+            color: var(--accent);
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .product-description {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* CTA Button */
+        .cta-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--primary);
+            color: #fff;
+            padding: 1.2rem 2rem;
+            border-radius: 50px;
+            font-size: 1.25rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: var(--glow);
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            width: 100%;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.03) translateY(-3px);
+            background: var(--primary-hover);
+            box-shadow: 0 0 50px rgba(157, 0, 255, 0.7);
+        }
+
+        .cta-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Footer Info */
+        .secure-info {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 2rem 1.5rem;
+                margin: 1.5rem auto;
+            }
+
+            .product-title {
+                font-size: 1.3rem;
+            }
+
+            .cta-btn {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Brand Logo -->
+        <img src="https://i.ibb.co/TxLcj9RV/44.png" alt="Marca" class="header-logo">
+
+        <div style="text-align: center;">
+            <span class="advertorial-badge">Conteúdo Premium Liberado</span>
+            <h1>Combo PowerSeduction:<br>O Poder Está em Suas Mãos</h1>
+        </div>
+
+        <div class="intro-text">
+            "A diferença entre ser apenas mais um e ser o homem que ela jamais esquece está no conhecimento que você
+            possui e na energia que você transmite."
+        </div>
+
+        <p>
+            Parabéns pela sua decisão. Poucos homens têm a coragem de admitir que podem evoluir e buscar as ferramentas
+            certas para dominar a arte do prazer e da performance. O <span class="highlight">Combo PowerSeduction</span>
+            foi desenvolvido para ser o seu arsenal definitivo.
+        </p>
+
+        <p>
+            Abaixo, você encontrará o acesso imediato aos dois pilares da sua nova fase. Recomendo que comece pelo guia
+            de prazer e utilize o kit de performance para potencializar cada encontro.
+        </p>
+
+        <!-- Product 1 -->
+        <div class="product-section">
+            <div class="product-title">
+                <span>🔥</span> Segredos do Prazer Feminino
+            </div>
+            <p class="product-description">
+                O Guia do Homem Imbatível. Descubra o que realmente passa na mente e no corpo delas. Técnicas, gatilhos
+                e o passo a passo para proporcionar experiências inesquecíveis que vão te tornar a única opção dela.
+            </p>
+            <a href="#" class="cta-btn">
+                <svg viewBox="0 0 24 24">
+                    <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+                </svg>
+                BAIXAR GUIA IMPEERDÍVEL
+            </a>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-section">
+            <div class="product-title">
+                <span>⚡</span> SexPower: Kit Performance
+            </div>
+            <p class="product-description">
+                Performance e Energia Masculina. Um compilado de estratégias, hábitos e segredos para elevar sua
+                testosterona natural, ter mais vigor, controle e durabilidade. O combustível que faltava para sua
+                confiança explodir.
+            </p>
+            <a href="#" class="cta-btn"
+                style="background: transparent; border: 2px solid var(--accent); color: var(--accent); box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);">
+                <svg viewBox="0 0 24 24" style="fill: var(--accent);">
+                    <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                </svg>
+                ACESSAR KIT ENERGIA
+            </a>
+        </div>
+
+        <p style="text-align: center; font-size: 0.9rem; margin-top: 2rem;">
+            Aproveite cada página, cada técnica. O seu sucesso agora é apenas uma questão de prática.
+        </p>
+
+        <!-- Security Footer -->
+        <div class="secure-info">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+            </svg>
+            Seu acesso foi verificado. Download 100% seguro.
+        </div>
+
+    </div>
+
+</body>
+
+</html>
